@@ -24,7 +24,7 @@ Este proyecto cuenta con un index (en el que está la información de una univer
 * Estilo personalizado, incluyendo css en los inserts y el submit, para que quede bien.
 * Si hay una pregunta vacía no deja corregirlo hasta que se responda.
 * Antes de corregir, pide una confirmación.
-* En los select (individual y multiple) hay una opción por defecto que decie "Selecciona una opción" que no puede ser seleccionada.
+* En los select (individual y multiple) hay una opción por defecto que dice "Selecciona una opción..." que no puede ser seleccionada.
 * El input text, puede ser escrito en mayúsculas o minúsculas, ya que lo puede corregir igual.
 
 ####Temporizador
@@ -32,7 +32,7 @@ Este proyecto cuenta con un index (en el que está la información de una univer
 * Incluye temporizador para hacer el examen.
 * El temporizador es un poco transparente para que no tape preguntas.
 * Si el tiempo llega a cero aparece una alerta.
-* Cuando se corrige el examen el temporizador desaparece
+* Cuando se corrige el examen el temporizador desaparece.
 
 ####Corrección
 
