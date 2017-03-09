@@ -16,7 +16,7 @@ Este proyecto cuenta con un index (en el que está la información de una univer
 ###Examen
 
 * Cuenta con su propio css (d.css y m.css) para escritorio y movil.
-* Cuenta con su propio js (js.js) para obtener los datos del XML.
+* Cuenta con su propio js (js.js) para obtener los datos del XML, poner los datos en el HTML y realizar la corrección.
 * Encima del formulario aparece el logo de nuestra universidad ficticia.
 
 ####Formulario
