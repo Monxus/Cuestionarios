@@ -18,7 +18,7 @@ window.onload = function() {
     formElement = document.getElementById('myform');
     formElement.onsubmit = function() {
         inicializar();
-        //if (comprobar()){
+        if (comprobar()){
             if (confirm("¿Quieres corregir el examen?")){
                 corregirSelect();
                 corregirMultiple();
@@ -31,7 +31,7 @@ window.onload = function() {
                 window.location.hash = '#notaFinal';
                 
             }     
-        //}
+        }
         
         return false;
     }
@@ -43,7 +43,7 @@ window.onload = function() {
             gestionarXml(this);
         }
     };
-    xhttp.open("GET", "https://cdn.rawgit.com/Monxus/Cuestionarios/35f727ea/xml/preguntas.xml", true); //cambiar URL al subir al github!!!
+    xhttp.open("GET", "xml/preguntas.xml", true); //cambiar URL al subir al github!!!
     xhttp.send();
     
     setInterval(actualizarTime,1000);
@@ -155,6 +155,7 @@ function corregirMultiple(){
     for(n=2;n<4;n++){
         var sel = formElement.elements[n];
         var escorrecta=[];
+        var mal=false;
         for(i=1;i<(sel.length);i++){
             var opt=sel.options[i];
             if(opt.selected){
@@ -169,9 +170,15 @@ function corregirMultiple(){
                 } else {
                     nota -=1.0/respuestasMultiple[n].length;  //dividido por el número de respuestas correctas   
                     darRespuestaHtml("- Pregunta "+(n+1)+": Opción"+i+" Incorrecta");
+                    mal=true;
                 }
             }
         } 
+        if(n==2 && mal==true){
+                darExplicacion("Respuestas correcta: a, b, d");
+            } else if (n==3 && mal==true) {
+                darExplicacion("Respuestas correcta: a, d");
+            }
         
     }
 }
@@ -192,8 +199,7 @@ function corregirText() {
                 darExplicacion("Respuesta correcta: silencio");
             }
         }
-        
-        
+     
     }
 }
 
@@ -230,6 +236,7 @@ function corregirCheckbox(){
   var escorrecta = [];
   for (n=8;n<10;n++){
     var nombre;
+    var mal=false;
     if (n==8){
         nombre=f.ocho;
     } else {
@@ -249,9 +256,15 @@ function corregirCheckbox(){
             } else {
                 nota -=1.0/respuestasCheckbox[n].length;  //dividido por el número de respuestas correctas   
                 darRespuestaHtml("- Pregunta "+(n+1)+": Opción "+(i+1)+" Incorrecta");
+                mal=true;
             }   
         } 
     }
+    if(n==8 && mal==true){
+                darExplicacion("Respuestas correcta: b, c, d, e, f");
+            } else if (n==9 && mal==true) {
+                darExplicacion("Respuestas correcta: a, b");
+            }
   }
   
 }
