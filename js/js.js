@@ -26,7 +26,7 @@ window.onload = function() {
                 corregirRadio();
                 corregirCheckbox();
                 presentarNota();
-                document.getElementById("cronometro").style.sidplay="none";
+                document.getElementById("cronometro").style.display="none";
                 alerta=true;
                 window.location.hash = '#notaFinal';
                 
